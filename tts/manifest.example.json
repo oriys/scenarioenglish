@@ -1,0 +1,42 @@
+{
+  "scene_id": "001",
+  "voice": "uk_airport_f_01",
+  "language": "English",
+  "lines": [
+    {
+      "id": "001-l1-001",
+      "level": "L1",
+      "intent": "destination_query",
+      "text": "Where are you flying to today?",
+      "output": "audio/001-counter-check-in/l1/001-l1-001.wav"
+    },
+    {
+      "id": "001-l2-001",
+      "level": "L2",
+      "intent": "checked_baggage_query",
+      "text": "Any bags to check?",
+      "output": "audio/001-counter-check-in/l2/001-l2-001.wav"
+    },
+    {
+      "id": "001-l2-002",
+      "level": "L2",
+      "intent": "checked_baggage_query",
+      "text": "Are you checking anything in?",
+      "output": "audio/001-counter-check-in/l2/001-l2-002.wav"
+    },
+    {
+      "id": "001-l3-001",
+      "level": "L3",
+      "intent": "critical_information",
+      "text": "Boarding starts at ten fifteen from gate thirty.",
+      "output": "audio/001-counter-check-in/l3/001-l3-001.wav"
+    },
+    {
+      "id": "001-l4-001",
+      "level": "L4",
+      "intent": "pressure",
+      "text": "Right, just to let you know, your gate's changed. You'll need gate thirteen now, and boarding starts at ten fifty.",
+      "output": "audio/001-counter-check-in/l4/001-l4-001.wav"
+    }
+  ]
+}
