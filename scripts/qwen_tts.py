@@ -1,46 +1,40 @@
 #!/usr/bin/env python3
-"""Local Qwen3-TTS pipeline for Scenario English.
+"""Qwen3-TTS pipeline for Scenario English on macOS / Apple Silicon.
 
 Workflow:
 1. Generate several VoiceDesign candidates for a fixed UK role.
 2. Listen and select one candidate as the role reference WAV.
-3. Use Qwen3-TTS 1.7B Base to voice-clone that reference for all course lines.
+3. Use Qwen3-TTS 1.7B Base through MLX-Audio to voice-clone that
+   reference for all course lines.
 
 Examples:
-  python scripts/qwen_tts.py design-reference --profile uk_airport_f_01 --candidates 4
-  python scripts/qwen_tts.py batch --manifest tts/manifest.example.json \
-      --reference tts/references/uk_airport_f_01.wav
+  python scripts/qwen_tts.py doctor
+  python scripts/qwen_tts.py design-reference --profile uk_airport_f_01 --candidates 6
+  python scripts/qwen_tts.py batch --manifest tts/manifest.example.json
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import platform
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, Iterable
 
+import numpy as np
 import soundfile as sf
-import torch
-from qwen_tts import Qwen3TTSModel
+from mlx_audio.tts.utils import load_model
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PROFILES = ROOT / "tts" / "voice_profiles.json"
-DESIGN_MODEL = "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign"
-BASE_MODEL = "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
 
-DEFAULT_GEN_KWARGS = {
-    "max_new_tokens": 2048,
-    "do_sample": True,
-    "top_k": 50,
-    "top_p": 1.0,
-    "temperature": 0.9,
-    "repetition_penalty": 1.05,
-    "subtalker_dosample": True,
-    "subtalker_top_k": 50,
-    "subtalker_top_p": 1.0,
-    "subtalker_temperature": 0.9,
-}
+# Quality-first defaults. On lower-memory Macs these can be overridden with the
+# corresponding mlx-community 8-bit model via --model.
+DESIGN_MODEL = "mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-bf16"
+BASE_MODEL = "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16"
+DESIGN_MODEL_8BIT = "mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-8bit"
+BASE_MODEL_8BIT = "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-8bit"
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -48,38 +42,20 @@ def load_json(path: Path) -> dict[str, Any]:
         return json.load(f)
 
 
-def choose_device(requested: str) -> str:
-    if requested != "auto":
-        return requested
-    if torch.cuda.is_available():
-        return "cuda:0"
-    # Qwen3-TTS currently has the most predictable local path on CUDA.
-    # CPU fallback is intentionally supported for correctness, not speed.
-    return "cpu"
+def check_platform() -> tuple[bool, str]:
+    system = platform.system()
+    machine = platform.machine().lower()
+    ok = system == "Darwin" and machine in {"arm64", "aarch64"}
+    return ok, f"{system} {machine}"
 
 
-def load_model(model_id: str, device: str, no_flash_attn: bool) -> Qwen3TTSModel:
-    kwargs: dict[str, Any] = {"device_map": device}
-
-    if device.startswith("cuda"):
-        kwargs["dtype"] = torch.bfloat16
-        if not no_flash_attn:
-            kwargs["attn_implementation"] = "flash_attention_2"
-    else:
-        kwargs["dtype"] = torch.float32
-
-    try:
-        return Qwen3TTSModel.from_pretrained(model_id, **kwargs)
-    except Exception as exc:
-        if device.startswith("cuda") and not no_flash_attn:
-            print(
-                "FlashAttention model load failed; retrying without flash_attention_2. "
-                f"Original error: {exc}",
-                file=sys.stderr,
-            )
-            kwargs.pop("attn_implementation", None)
-            return Qwen3TTSModel.from_pretrained(model_id, **kwargs)
-        raise
+def require_apple_silicon() -> None:
+    ok, description = check_platform()
+    if not ok:
+        raise SystemExit(
+            "This TTS pipeline is configured for macOS on Apple Silicon (M1 or newer). "
+            f"Detected: {description}."
+        )
 
 
 def get_profile(path: Path, profile_id: str) -> tuple[str, dict[str, Any]]:
@@ -92,13 +68,72 @@ def get_profile(path: Path, profile_id: str) -> tuple[str, dict[str, Any]]:
     return ref_text, profiles[profile_id]
 
 
+def collect_audio(results: Iterable[Any], fallback_sample_rate: int) -> tuple[np.ndarray, int]:
+    chunks: list[np.ndarray] = []
+    sample_rate = fallback_sample_rate
+
+    for result in results:
+        audio = np.asarray(result.audio, dtype=np.float32).reshape(-1)
+        if audio.size:
+            chunks.append(audio)
+        result_sr = getattr(result, "sample_rate", None)
+        if result_sr:
+            sample_rate = int(result_sr)
+
+    if not chunks:
+        raise RuntimeError("Qwen3-TTS returned no audio samples.")
+
+    if len(chunks) == 1:
+        return chunks[0], sample_rate
+    return np.concatenate(chunks), sample_rate
+
+
+def save_results(results: Iterable[Any], model: Any, output: Path) -> None:
+    audio, sample_rate = collect_audio(results, int(model.sample_rate))
+    output.parent.mkdir(parents=True, exist_ok=True)
+    sf.write(output, audio, sample_rate, subtype="PCM_16")
+
+
+def load_mlx_model(model_id: str) -> Any:
+    require_apple_silicon()
+    print(f"Loading MLX model: {model_id}")
+    print("The first run may download model weights from Hugging Face.")
+    return load_model(model_id)
+
+
+def cmd_doctor(_: argparse.Namespace) -> None:
+    ok, description = check_platform()
+    print(f"Platform: {description}")
+    print(f"Python: {sys.version.split()[0]}")
+    print(f"Apple Silicon: {'yes' if ok else 'no'}")
+
+    try:
+        import mlx  # noqa: F401
+
+        print("MLX: installed")
+    except Exception as exc:
+        print(f"MLX: unavailable ({exc})")
+
+    try:
+        import mlx_audio  # noqa: F401
+
+        print("MLX-Audio: installed")
+    except Exception as exc:
+        print(f"MLX-Audio: unavailable ({exc})")
+
+    print(f"Quality VoiceDesign model: {DESIGN_MODEL}")
+    print(f"Quality Base model:        {BASE_MODEL}")
+    print(f"Low-memory VoiceDesign:    {DESIGN_MODEL_8BIT}")
+    print(f"Low-memory Base:           {BASE_MODEL_8BIT}")
+
+    if not ok:
+        raise SystemExit(1)
+
+
 def cmd_design_reference(args: argparse.Namespace) -> None:
     profile_path = Path(args.profiles)
     ref_text, profile = get_profile(profile_path, args.profile)
-    device = choose_device(args.device)
-
-    print(f"Loading VoiceDesign model on {device}...")
-    model = load_model(args.model, device, args.no_flash_attn)
+    model = load_mlx_model(args.model)
 
     out_dir = Path(args.output_dir) / args.profile
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -108,14 +143,13 @@ def cmd_design_reference(args: argparse.Namespace) -> None:
     print(f"Reference transcript: {ref_text}")
 
     for i in range(1, args.candidates + 1):
-        wavs, sr = model.generate_voice_design(
+        results = model.generate_voice_design(
             text=ref_text,
             language="English",
             instruct=profile["description"],
-            **DEFAULT_GEN_KWARGS,
         )
         out = out_dir / f"candidate-{i:02d}.wav"
-        sf.write(out, wavs[0], sr)
+        save_results(results, model, out)
         print(f"Wrote {out}")
 
     transcript_path = out_dir / "reference.txt"
@@ -127,33 +161,23 @@ def cmd_design_reference(args: argparse.Namespace) -> None:
     )
 
 
-def create_clone_prompt(
-    model: Qwen3TTSModel,
+def generate_clone(
+    model: Any,
     reference: Path,
     reference_text: str,
-):
-    return model.create_voice_clone_prompt(
-        ref_audio=str(reference),
-        ref_text=reference_text,
-        x_vector_only_mode=False,
-    )
-
-
-def generate_one(
-    model: Qwen3TTSModel,
-    prompt,
     text: str,
     language: str,
     output: Path,
 ) -> None:
-    wavs, sr = model.generate_voice_clone(
+    # MLX-Audio's Qwen3-TTS Base model accepts reference audio + transcript
+    # directly. Its implementation caches ICL/reference work internally.
+    results = model.generate(
         text=text,
         language=language,
-        voice_clone_prompt=prompt,
-        **DEFAULT_GEN_KWARGS,
+        ref_audio=str(reference),
+        ref_text=reference_text,
     )
-    output.parent.mkdir(parents=True, exist_ok=True)
-    sf.write(output, wavs[0], sr)
+    save_results(results, model, output)
 
 
 def cmd_synthesize(args: argparse.Namespace) -> None:
@@ -163,13 +187,9 @@ def cmd_synthesize(args: argparse.Namespace) -> None:
     if not reference.exists():
         raise SystemExit(f"Reference WAV not found: {reference}")
 
-    device = choose_device(args.device)
-    print(f"Loading Base voice-clone model on {device}...")
-    model = load_model(args.model, device, args.no_flash_attn)
-    prompt = create_clone_prompt(model, reference, ref_text)
-
+    model = load_mlx_model(args.model)
     output = Path(args.output)
-    generate_one(model, prompt, args.text, args.language, output)
+    generate_clone(model, reference, ref_text, args.text, args.language, output)
     print(f"Wrote {output}")
 
 
@@ -193,11 +213,8 @@ def cmd_batch(args: argparse.Namespace) -> None:
     if not lines:
         raise SystemExit("Manifest has no lines.")
 
-    device = choose_device(args.device)
-    print(f"Loading Base voice-clone model on {device}...")
+    model = load_mlx_model(args.model)
     print(f"Voice: {profile_id} ({profile.get('role', 'unknown role')})")
-    model = load_model(args.model, device, args.no_flash_attn)
-    prompt = create_clone_prompt(model, reference, ref_text)
 
     language = manifest.get("language", "English")
     for index, line in enumerate(lines, start=1):
@@ -207,26 +224,29 @@ def cmd_batch(args: argparse.Namespace) -> None:
             print(f"[{index}/{len(lines)}] skip existing {output}")
             continue
         print(f"[{index}/{len(lines)}] {line.get('id', output.stem)}: {text}")
-        generate_one(model, prompt, text, language, output)
+        generate_clone(model, reference, ref_text, text, language, output)
         print(f"    -> {output}")
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Scenario English Qwen3-TTS pipeline")
-    parser.add_argument("--device", default="auto", help="auto, cuda:0, cpu, etc.")
-    parser.add_argument(
-        "--no-flash-attn",
-        action="store_true",
-        help="Do not request flash_attention_2 when loading CUDA models.",
+    parser = argparse.ArgumentParser(
+        description="Scenario English Qwen3-TTS pipeline for macOS / Apple Silicon"
     )
     parser.add_argument("--profiles", default=str(DEFAULT_PROFILES))
 
     sub = parser.add_subparsers(dest="command", required=True)
 
+    doctor = sub.add_parser("doctor", help="Check the local Apple Silicon / MLX environment")
+    doctor.set_defaults(func=cmd_doctor)
+
     design = sub.add_parser("design-reference", help="Generate candidate role reference voices")
     design.add_argument("--profile", required=True)
-    design.add_argument("--candidates", type=int, default=4)
-    design.add_argument("--model", default=DESIGN_MODEL)
+    design.add_argument("--candidates", type=int, default=6)
+    design.add_argument(
+        "--model",
+        default=DESIGN_MODEL,
+        help=f"MLX VoiceDesign model (low-memory option: {DESIGN_MODEL_8BIT})",
+    )
     design.add_argument("--output-dir", default=str(ROOT / "tts" / "candidates"))
     design.set_defaults(func=cmd_design_reference)
 
@@ -236,14 +256,22 @@ def build_parser() -> argparse.ArgumentParser:
     synth.add_argument("--text", required=True)
     synth.add_argument("--language", default="English")
     synth.add_argument("--output", required=True)
-    synth.add_argument("--model", default=BASE_MODEL)
+    synth.add_argument(
+        "--model",
+        default=BASE_MODEL,
+        help=f"MLX Base model (low-memory option: {BASE_MODEL_8BIT})",
+    )
     synth.set_defaults(func=cmd_synthesize)
 
     batch = sub.add_parser("batch", help="Generate all lines in an audio manifest")
     batch.add_argument("--manifest", required=True)
     batch.add_argument("--profile", help="Override manifest voice profile")
     batch.add_argument("--reference", help="Override role reference WAV")
-    batch.add_argument("--model", default=BASE_MODEL)
+    batch.add_argument(
+        "--model",
+        default=BASE_MODEL,
+        help=f"MLX Base model (low-memory option: {BASE_MODEL_8BIT})",
+    )
     batch.add_argument("--overwrite", action="store_true")
     batch.set_defaults(func=cmd_batch)
 
