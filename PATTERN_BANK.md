@@ -384,6 +384,240 @@
 
 **用途：**紧急情况下优先清晰，不追求复杂表达。
 
+### I. 时间、时长与截止
+
+#### P046 — How long does it take to + action?
+
+`How long does it take to + 动作?`
+
+- How long does it take to get through security?
+- How long does it take to walk to Gate 42?
+- How long does it take to get to the city centre?
+
+**用途：**安检、转机、步行距离、交通、办事流程。
+
+#### P047 — What time do I need to + action?
+
+`What time do I need to + 动作?`
+
+- What time do I need to be at the gate?
+- What time do I need to check out?
+- What time do I need to drop the bag off?
+
+**用途：**登机、退房、还车、预约、截止时间。
+
+#### P048 — Do you know how long it'll be?
+
+`Do you know how long it'll be?`
+
+- The board says delayed — do you know how long it'll be?
+- Do you know how long the queue will be?
+- Do you know how long the wait is?
+
+**用途：**延误、排队、等餐、等车、等结果。
+
+#### P049 — Will I have enough time to + action?
+
+`Will I have enough time to + 动作?`
+
+- My connection is 50 minutes — will I have enough time to make it?
+- Will I have enough time to get something to eat?
+- Will I have enough time to go through passport control?
+
+**用途：**转机、换乘、中途购物用餐、赶末班车。
+
+### J. 规则、限制与是否允许
+
+#### P050 — Am I allowed to + action?
+
+`Am I allowed to + 动作?`
+
+- Am I allowed to take this through security?
+- Am I allowed to keep my laptop in the bag?
+- Am I allowed to bring food on board?
+
+**用途：**安检、机上、边检、场馆、住宿的允许范围。
+
+#### P051 — Is there a limit on + noun?
+
+`Is there a limit on + 名词?`
+
+- Is there a limit on liquids?
+- Is there a limit on hand baggage?
+- Is there a limit on how much I can carry?
+
+**用途：**液体、行李、数量、金额、时长的上限。
+
+#### P052 — Does this count as + noun?
+
+`Does this count as + 名词?`
+
+- Does this count as hand baggage?
+- Does this count as a personal item?
+- Does this count as one bag?
+
+**用途：**行李归类、票种归类、优惠资格判断。
+
+#### P053 — Do I need to take + noun + out?
+
+`Do I need to take + 名词 + out?`
+
+- Do I need to take my laptop out?
+- Do I need to take my liquids out of the bag?
+- Do I need to take my belt off?
+
+**用途：**安检开包、脱衣物、取出电子设备。
+
+### K. 位置、顺序与流程状态
+
+#### P054 — Am I in the right queue for + noun?
+
+`Am I in the right queue for + 名词?`
+
+- Am I in the right queue for bag drop?
+- Am I in the right queue for e-gates?
+- Am I in the right queue for Group 3?
+
+**用途：**排错队时快速纠正，避免白等。
+
+#### P055 — Which gate / desk / lane do I need?
+
+`Which + gate / desk / lane / platform + do I need?`
+
+- Which gate do I need for the Edinburgh flight?
+- Which desk do I need for oversized baggage?
+- Which platform do I need for Oxford?
+
+**用途：**登机口、柜台、通道、站台的定位。
+
+#### P056 — Has + noun + been called yet?
+
+`Has + 名词 + been called yet?`
+
+- Has my flight been called yet?
+- Has boarding been called yet?
+- Has Group 2 been called yet?
+
+**用途：**确认广播进度、是否已开始登机。
+
+#### P057 — Is this the right + noun + for me?
+
+`Is this the right + 名词 + for me?`
+
+- Is this the right gate for BA1234?
+- Is this the right seat for me?
+- Is this the right form for me?
+
+**用途：**登机口、座位、表格、车厢的确认。
+
+### L. 求助、协商与升级处理
+
+#### P058 — Could you help me with + noun?
+
+`Could you help me with + 名词?`
+
+- Could you help me with the machine, please?
+- Could you help me with my bag, please?
+- Could you help me with this form, please?
+
+**用途：**自助设备、行李、表格、语言障碍时求助。
+
+#### P059 — Is there someone who can + action?
+
+`Is there someone who can + 动作?`
+
+- Is there someone who can check this for me?
+- Is there someone who can speak Chinese?
+- Is there someone who can open the gate?
+
+**用途：**当前工作人员无法处理时请求升级或转介。
+
+#### P060 — Could you check that for me, please?
+
+`Could you check + 内容 + for me, please?`
+
+- Could you check my booking for me, please?
+- Could you check if my bag is on the flight?
+- Could you check the next available flight for me, please?
+
+**用途：**订位、行李、余位、时间的核查请求。
+
+#### P061 — I've been waiting for + 时长
+
+`I've been waiting for + 时长 + (and ...)`
+
+- I've been waiting for over an hour.
+- I've been waiting for 40 minutes and no one has come.
+- I've been waiting here since 9 o'clock.
+
+**用途：**礼貌但明确地表达等待过久，推动处理。
+
+#### P062 — Who should I speak to about + noun?
+
+`Who should I speak to about + 名词?`
+
+- Who should I speak to about a missed connection?
+- Who should I speak to about compensation?
+- Who should I speak to about my luggage?
+
+**用途：**不知道归哪个部门管时定位对口人。
+
+### M. 突发情况与后果确认
+
+#### P063 — What happens if + 情况?
+
+`What happens if + 主语 + 动词?`
+
+- What happens if I miss my connection?
+- What happens if the flight is cancelled?
+- What happens if my bag is overweight?
+
+**用途：**提前确认后果，用于异常与风险场景。
+
+#### P064 — I think I'm going to miss + noun
+
+`I think I'm going to miss + 名词`
+
+- I think I'm going to miss my connection.
+- I think I'm going to miss the last train.
+- I think I'm going to miss boarding.
+
+**用途：**主动预警，让工作人员优先处理你。
+
+#### P065 — Is there anything you can do?
+
+`Is there anything you can do (about + 名词)?`
+
+- Is there anything you can do about the seats?
+- Is there anything you can do to get me on an earlier flight?
+- Is there anything you can do to help?
+
+**用途：**规则不利时的最后一次礼貌协商。
+
+#### P066 — Could you put me on + noun?
+
+`Could you put me on + 名词?`
+
+- Could you put me on the next flight?
+- Could you put me on the standby list?
+- Could you put me on an earlier train?
+
+**用途：**改签、候补、换班次。
+
+#### P067 — Will I be + past participle?
+
+`Will I be + 过去分词 (compensated / rebooked / refunded / provided with ...)?`
+
+- Will I be rebooked automatically?
+- Will I be provided with a hotel?
+- Will I be refunded for the ticket?
+
+**用途：**取消、延误、超售后的权益确认。
+
+
+
+
+
 ---
 
 ## 3. Scene 使用方式
