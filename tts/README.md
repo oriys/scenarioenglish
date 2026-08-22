@@ -1,6 +1,8 @@
-# Scenario English — Local TTS
+# Scenario English — Local TTS on macOS
 
-The course uses **Qwen3-TTS 1.7B** as the primary local speech engine.
+The course uses **Qwen3-TTS 1.7B through MLX-Audio** as the primary local speech engine.
+
+The target environment is **macOS on Apple Silicon (M1 or newer)**. CUDA, PyTorch and FlashAttention are no longer required for the local course pipeline.
 
 The design goal is not merely good-sounding TTS. It is to keep a small cast of believable British service workers consistent across hundreds of listening drills.
 
@@ -9,7 +11,7 @@ The design goal is not merely good-sounding TTS. It is to keep a small cast of b
 ```text
 Voice profile
     ↓
-Qwen3-TTS-12Hz-1.7B-VoiceDesign
+Qwen3-TTS-12Hz-1.7B-VoiceDesign (MLX)
     ↓
 Generate 4–8 candidate reference clips
     ↓
@@ -17,7 +19,7 @@ Human blind selection
     ↓
 Selected reference WAV
     ↓
-Qwen3-TTS-12Hz-1.7B-Base voice clone
+Qwen3-TTS-12Hz-1.7B-Base voice clone (MLX)
     ↓
 All Scene listening lines for that role
 ```
@@ -26,24 +28,69 @@ VoiceDesign is used only to create candidates. Once a role is approved, normal c
 
 ## Models
 
-- Voice creation: `Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign`
-- Production generation: `Qwen/Qwen3-TTS-12Hz-1.7B-Base`
+Quality-first defaults:
 
-For quality-first local generation, an NVIDIA CUDA GPU with BF16 support is recommended. `flash_attention_2` is requested automatically when available; the script falls back to normal attention if model loading fails with FlashAttention.
+- Voice creation: `mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-bf16`
+- Production generation: `mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16`
 
-CPU mode is supported for correctness/testing but is not the recommended production path.
+Lower-memory alternatives:
+
+- Voice creation: `mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-8bit`
+- Production generation: `mlx-community/Qwen3-TTS-12Hz-1.7B-Base-8bit`
+
+For this project, use **BF16 first** because final listening quality is the primary requirement. Switch to 8-bit only if memory pressure becomes a practical problem.
+
+## Requirements
+
+- macOS 14+ recommended
+- Apple Silicon: M1 / M2 / M3 / M4 or newer
+- Python 3.11+ recommended
+- 16 GB unified memory recommended for the 1.7B models
+- `ffmpeg` for later audio processing/export stages
+
+MLX-Audio is optimized for Apple Silicon and currently supports Qwen3-TTS Base voice cloning and VoiceDesign directly.
 
 ## Installation
 
-Create an isolated environment, install the correct PyTorch build for your CUDA version, then:
+Recommended setup with `uv`:
 
 ```bash
+brew install python@3.11 uv ffmpeg
+
+uv venv --python 3.11 .venv
+source .venv/bin/activate
+uv pip install -r tts/requirements.txt
+```
+
+`pip` also works:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r tts/requirements.txt
 ```
 
-For compatible NVIDIA environments, install FlashAttention separately for better performance.
+No CUDA toolkit, PyTorch CUDA wheel, or FlashAttention installation is needed.
 
-Models are loaded from Hugging Face on first use unless you replace the model IDs with local model directories.
+Models are downloaded from Hugging Face on first use and cached locally.
+
+## Check the environment
+
+Run:
+
+```bash
+python scripts/qwen_tts.py doctor
+```
+
+You should see:
+
+```text
+Apple Silicon: yes
+MLX: installed
+MLX-Audio: installed
+```
+
+If you are on an Intel Mac, this pipeline is not supported as the primary local path.
 
 ## 1. Create voice candidates
 
@@ -56,6 +103,8 @@ python scripts/qwen_tts.py design-reference \
   --profile uk_airport_f_01 \
   --candidates 6
 ```
+
+The first run downloads the 1.7B VoiceDesign model.
 
 Outputs:
 
@@ -100,7 +149,7 @@ python scripts/qwen_tts.py synthesize \
   --output /tmp/check-in.wav
 ```
 
-This uses the **1.7B Base** voice-clone model, not VoiceDesign.
+This uses the **1.7B Base BF16 MLX model**, not VoiceDesign.
 
 ## 3. Generate a Scene from a manifest
 
@@ -127,6 +176,29 @@ The manifest controls:
 - role voice.
 
 Existing output files are skipped by default. Use `--overwrite` only when intentionally regenerating them.
+
+## Lower-memory mode
+
+If BF16 causes memory pressure, override the model without changing the pipeline.
+
+Voice design:
+
+```bash
+python scripts/qwen_tts.py design-reference \
+  --profile uk_airport_f_01 \
+  --candidates 6 \
+  --model mlx-community/Qwen3-TTS-12Hz-1.7B-VoiceDesign-8bit
+```
+
+Production voice cloning:
+
+```bash
+python scripts/qwen_tts.py batch \
+  --manifest tts/001-counter-check-in.json \
+  --model mlx-community/Qwen3-TTS-12Hz-1.7B-Base-8bit
+```
+
+Do not default to the 0.6B model merely for speed. The course is quality-first.
 
 ## Voice cast
 
