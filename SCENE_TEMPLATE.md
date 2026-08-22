@@ -1,8 +1,21 @@
 # Scene XXX — 场景标题 / English Title
 
-> **Path:** 主题 → 子主题 → 最小场景  
-> **Region:** UK-first / General English  
-> **Target level:** A2–B1 production, real-world input may be harder
+```yaml
+scene_id: XXX
+type: core
+priority: P0
+level: A2-B1
+estimated_time: 30m
+region: UK-first / General English
+prerequisites: []
+related_scenes: []
+new_patterns: []
+review_patterns: []
+policy_sensitive: false
+last_verified: YYYY-MM
+```
+
+> **Path:** 主题 → 子主题 → 最小场景
 
 ## 1. 场景介绍
 
@@ -47,28 +60,64 @@
 
 1. **…** — …
 
-## 9. 高频词汇（20–30）
+## 9. 高频词汇
+
+### New Vocabulary
 
 | English | 中文 | 使用提示 |
 |---|---|---|
 | … | … | … |
 
-## 10. 10 个可迁移核心句型
+### Review Vocabulary
 
-### Pattern 1
+| English | 来源 Scene | 本场景用途 |
+|---|---|---|
+| … | … | … |
 
-`…`
+### Recognition Vocabulary
 
-> …
+| English | 中文 | 为什么需要认识 |
+|---|---|---|
+| … | … | … |
 
-## 11. 完整真实角色扮演（≥30 turns）
+## 10. Patterns
+
+### New Patterns
+
+- PXXX — …
+
+### Review Patterns
+
+- PXXX — …
+
+## 11. Role Play A — Normal
+
+目标：顺利完成任务。
 
 **Staff:** …  
 **You:** …
 
-> 要求包含：信息核对、数字/时间/地点、追问、听不懂后的修复、至少一个异常、问题解决和明确收尾。
+## 12. Role Play B — Problem
 
-## 12. 听不懂时的万能应对句
+目标：出现一个常见异常后仍完成任务。
+
+**Staff:** …  
+**You:** …
+
+## 13. Role Play C — Pressure Test
+
+目标：加入真实压力：
+
+- 快语速；
+- 数字/时间变化；
+- 没听清；
+- 对方换表达；
+- 环境干扰。
+
+**Staff:** …  
+**You:** …
+
+## 14. 听不懂时的万能应对句
 
 - **Sorry, could you say that again?**
 - **Could you say that a little more slowly, please?**
@@ -77,30 +126,30 @@
 - **Could you show me where that is?**
 - **What does ___ mean?**
 
-## 13. 英国本地表达
+## 15. 英国本地表达
 
 | 表达 | 地区 | 含义 / 使用说明 |
 |---|---|---|
 | … | UK | … |
 
-## 14. 易错点
+## 16. 易错点
 
 ### 易错 1
 
 ❌ …  
 ✅ …
 
-## 15. 扩展说明
+## 17. 扩展说明
 
 补充真实旅行中的流程知识、文化差异、替代表达和必要背景。
 
-## 16. 练习题
+## 18. 练习题
 
 ### A. 识别
 
 1. …
 
-### B. 句型替换
+### B. Pattern 替换
 
 1. …
 
@@ -115,10 +164,19 @@
 
 要求：不用逐句翻译，自己完成任务。
 
-## 17. 场景通关标准
+### E. 迁移练习
+
+把本课 Pattern 用到另一个旅行场景。
+
+## 19. 场景通关标准
 
 - [ ] 10 秒内说明自己的任务
 - [ ] 听懂并回答至少 8/10 个高频问题
-- [ ] 脱稿使用至少 8/10 个核心句型
+- [ ] 主动使用本课 New Patterns
+- [ ] 能迁移至少 2 个 Review Patterns
 - [ ] 至少会 3 种对话修复方法
 - [ ] 遇到一个常见异常仍能把事情办成
+
+## 20. Related Scenes
+
+- Scene XXX — …
