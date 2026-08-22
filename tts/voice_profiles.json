@@ -1,0 +1,37 @@
+{
+  "reference_text": "Good morning. May I see your passport and boarding pass, please? If you're checking a bag, place it on the scale. Boarding begins at ten fifteen from gate thirty.",
+  "profiles": {
+    "uk_airport_f_01": {
+      "role": "airport ground staff",
+      "description": "A British woman in her early thirties working at an international airport check-in desk. Neutral Southern British accent, professional and calm, friendly without sounding theatrical, natural service-counter rhythm, clear consonants, medium pace, realistic rather than presenter-like."
+    },
+    "uk_airport_m_01": {
+      "role": "airport security officer",
+      "description": "A British man in his forties working in airport security. Neutral Southern British accent, concise and authoritative but polite, short practical instructions, medium-fast natural pace, realistic workplace delivery, not a radio announcer."
+    },
+    "uk_rail_f_01": {
+      "role": "railway staff",
+      "description": "A British woman in her thirties working at a railway station in Northern England. Light Northern English accent that remains easy to understand, efficient and matter-of-fact, slightly brisk natural station-counter pace, professional and realistic."
+    },
+    "uk_rail_m_01": {
+      "role": "railway staff",
+      "description": "A British man in his forties working on the railway. Light London or Estuary English accent, practical and concise, moderately fast conversational pace, natural reduced speech where appropriate, clear enough for public-facing service work."
+    },
+    "uk_hotel_f_01": {
+      "role": "hotel receptionist",
+      "description": "A British woman in her late twenties working at a good London hotel reception desk. Contemporary London accent close to standard British English, warm and professional, relaxed conversational rhythm, medium pace, natural hospitality tone without sounding scripted."
+    },
+    "uk_restaurant_m_01": {
+      "role": "restaurant server",
+      "description": "A British man in his late twenties working in a busy London restaurant. Contemporary London accent, friendly and efficient, natural casual service style, slightly fast but intelligible pace, realistic connected speech and reductions."
+    },
+    "uk_pharmacy_f_01": {
+      "role": "pharmacist",
+      "description": "A British woman in her forties working as a community pharmacist. Neutral British accent, calm, reassuring and precise, measured conversational pace, excellent clarity for medication and dosage information, professional rather than dramatic."
+    },
+    "uk_scotland_m_01": {
+      "role": "public-facing staff in Scotland",
+      "description": "A Scottish man in his thirties working in a public-facing travel service role. Light modern Scottish accent, friendly and practical, natural conversational pace, clearly intelligible to visitors, authentic but not a strong regional dialect."
+    }
+  }
+}
