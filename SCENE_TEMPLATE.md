@@ -172,6 +172,8 @@ last_verified: YYYY-MM
 
 - [ ] 10 秒内说明自己的任务
 - [ ] 听懂并回答至少 8/10 个高频问题
+- [ ] 同一意图换至少 3 种说法后仍能正确回应
+- [ ] 关键数字 / 时间 / 金额不确定时主动确认，不靠猜
 - [ ] 主动使用本课 New Patterns
 - [ ] 能迁移至少 2 个 Review Patterns
 - [ ] 至少会 3 种对话修复方法
@@ -180,3 +182,45 @@ last_verified: YYYY-MM
 ## 20. Related Scenes
 
 - Scene XXX — …
+
+## 21. Listening Drill
+
+> 具体设计规范见 [`LISTENING_GUIDE.md`](./LISTENING_GUIDE.md)。Core Scene 原则上需要覆盖 A–D 四层训练。
+
+### A. Same intent, different wording
+
+同一个工作人员意图至少准备 3–6 种自然表达。
+
+1. **…**
+2. **…**
+3. **…**
+
+**Task:** 听到任意一种表达后，3 秒内给出有效回应。
+
+### B. Critical information
+
+重点训练不能听错的信息：数字、时间、金额、Gate、Platform、Room number、日期、姓名拼写、地址 / postcode。
+
+**Staff:** …  
+**Task:** 复述或主动确认关键信息。
+
+### C. Repair required
+
+故意加入一个容易误听、信息更正或表达不熟悉的位置。
+
+**Staff:** …  
+**Task:** 必须使用 conversation repair，不允许靠猜继续。
+
+### D. Pressure round
+
+至少加入其中两项：
+
+- 更快语速；
+- 同义改写；
+- 弱读 / 缩略；
+- 数字变化；
+- 两个信息点同时出现；
+- 背景噪音 / 电话音质；
+- 轻度地区口音。
+
+目标：即使漏掉部分单词，仍抓住任务所需信息并继续完成交流。
