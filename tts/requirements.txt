@@ -1,0 +1,4 @@
+qwen-tts
+soundfile
+# Install PyTorch separately for your CUDA version: https://pytorch.org/get-started/locally/
+# For best NVIDIA GPU performance also install flash-attn when compatible with your system.
