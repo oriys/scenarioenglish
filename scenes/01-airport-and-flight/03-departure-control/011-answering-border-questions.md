@@ -9,7 +9,7 @@ estimated_time: 35m
 region: UK-first
 prerequisites: [010]
 related_scenes: [010, 035]
-new_patterns: [P067]
+new_patterns: [P068]
 review_patterns: [P004, P055, P058]
 policy_sensitive: true
 last_verified: 2026-08
@@ -154,7 +154,7 @@ last_verified: 2026-08
 
 ### New Patterns
 
-- P067 — 回答"目的/身份"的短句族 —— `I'm here on + 目的` / `I'm a + 身份` / `I'm staying for + 时长`
+- P068 — 回答"目的/身份"的短句族 —— `I'm here on + 目的` / `I'm a + 身份` / `I'm staying for + 时长`
 
 ### Review Patterns
 
@@ -332,7 +332,7 @@ last_verified: 2026-08
 
 ### B. Pattern 替换
 
-1. 用 P067 答：我来度假 / 我去看家人 / 我是学生 / 我待一个月。
+1. 用 P068 答：我来度假 / 我去看家人 / 我是学生 / 我待一个月。
 2. 用 P004 问：能不能用手机出示返程票。
 3. 用 P058 请求：请再解释一遍"purpose"。
 

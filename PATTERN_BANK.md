@@ -608,6 +608,23 @@
 
 `Will I be + 过去分词 (compensated / rebooked / refunded / provided with ...)?`
 
+- Will I be charged for that?
+- Will I be covered if the flight is cancelled?
+- Will I be rebooked on the next flight?
+
+**用途：**费用、赔偿、改签、覆盖范围等被动结果。
+
+#### P068 — I'm here on + 目的 / I'm a + 身份
+
+`I'm here on + 目的 (holiday / business / a visit)`
+
+- I'm here on holiday.
+- I'm here on business.
+- I'm visiting my family.
+- I'm a student / a teacher / I work in a bank.
+
+**用途：**回答来访目的、职业身份——边境问询、酒店入住、社交场合高频。
+
 - Will I be rebooked automatically?
 - Will I be provided with a hotel?
 - Will I be refunded for the ticket?
