@@ -146,19 +146,19 @@ last_verified: 2026-08
 
 **You:** (走向绿色通道，被官员叫住)
 
-**Officer:** Good afternoon. Do you have anything to declare?
+**Staff:** Good afternoon. Do you have anything to declare?
 
 **You:** No, I have nothing to declare.
 
-**Officer:** Where have you travelled from?
+**Staff:** Where have you travelled from?
 
 **You:** From Shanghai, on flight BA123.
 
-**Officer:** And what's in your bags?
+**Staff:** And what's in your bags?
 
 **You:** Just clothes, gifts for my family, and some snacks — biscuits and chocolate.
 
-**Officer:** That's fine. Enjoy your stay in the UK.
+**Staff:** That's fine. Enjoy your stay in the UK.
 
 **You:** Thank you very much.
 
@@ -168,19 +168,19 @@ last_verified: 2026-08
 
 **You:** Excuse me, I'm not sure which channel to use. Can you help me?
 
-**Officer:** Of course. Do you have anything over your allowance?
+**Staff:** Of course. Do you have anything over your allowance?
 
 **You:** I have two bottles of whisky — is that over the limit?
 
-**Officer:** You can bring up to 4 litres of spirits — so two bottles is fine.
+**Staff:** You can bring up to 4 litres of spirits — so two bottles is fine.
 
 **You:** Oh, that's under the limit then. So green channel?
 
-**Officer:** Yes, if that's everything. Any tobacco?
+**Staff:** Yes, if that's everything. Any tobacco?
 
 **You:** No, just the whisky.
 
-**Officer:** Green channel then — enjoy your trip.
+**Staff:** Green channel then — enjoy your trip.
 
 **You:** Thank you for checking!
 
@@ -188,27 +188,27 @@ last_verified: 2026-08
 
 目标：带了食品不确定 + 官员盘问。
 
-**Officer:** Do you have anything to declare?
+**Staff:** Do you have anything to declare?
 
 **You:** I'm not sure — I brought some food from home.
 
-**Officer:** What kind of food?
+**Staff:** What kind of food?
 
 **You:** Some dried meat snacks and a packet of nuts.
 
-**Officer:** Meat products from outside the EU are not allowed. I'm afraid we'll have to seize those.
+**Staff:** Meat products from outside the EU are not allowed. I'm afraid we'll have to seize those.
 
 **You:** Oh, I'm sorry — I didn't realise. What about the nuts?
 
-**Officer:** Nuts are also restricted. I'm afraid both need to be confiscated.
+**Staff:** Nuts are also restricted. I'm afraid both need to be confiscated.
 
 **You:** I understand. I should have checked the rules before packing.
 
-**Officer:** That's the right attitude. Everything else fine?
+**Staff:** That's the right attitude. Everything else fine?
 
 **You:** Yes, just clothes and gifts. Sorry again.
 
-**Officer:** No problem — enjoy your stay.
+**Staff:** No problem — enjoy your stay.
 
 **You:** Thank you.
 

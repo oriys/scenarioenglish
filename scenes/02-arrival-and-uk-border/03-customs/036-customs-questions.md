@@ -146,23 +146,23 @@ last_verified: 2026-08
 
 目标：配合抽查顺利通过。
 
-**Officer:** Could you come here, please? This is a random check.
+**Staff:** Could you come here, please? This is a random check.
 
 **You:** Sure, no problem.
 
-**Officer:** Could you open your bag, please?
+**Staff:** Could you open your bag, please?
 
 **You:** Of course — here you go.
 
-**Officer:** Thanks. What's in the suitcase?
+**Staff:** Thanks. What's in the suitcase?
 
 **You:** Clothes, gifts for my family, and some books.
 
-**Officer:** Anything to declare?
+**Staff:** Anything to declare?
 
 **You:** No, nothing over my allowance.
 
-**Officer:** That's fine. You can go. Enjoy your stay.
+**Staff:** That's fine. You can go. Enjoy your stay.
 
 **You:** Thank you very much.
 
@@ -170,23 +170,23 @@ last_verified: 2026-08
 
 目标：被问物品 + 有点紧张。
 
-**Officer:** What's in this plastic bag?
+**Staff:** What's in this plastic bag?
 
 **You:** It's... some food from home. Snacks.
 
-**Officer:** What kind of snacks?
+**Staff:** What kind of snacks?
 
 **You:** Some dried meat and biscuits. Is that a problem?
 
-**Officer:** The dried meat isn't allowed from outside the EU, I'm afraid.
+**Staff:** The dried meat isn't allowed from outside the EU, I'm afraid.
 
 **You:** Oh no, I'm sorry. I didn't realise. My mum packed it for me.
 
-**Officer:** I understand. We'll have to confiscate it — but the biscuits are fine.
+**Staff:** I understand. We'll have to confiscate it — but the biscuits are fine.
 
 **You:** Okay, that's fair. Can I keep the biscuits?
 
-**Officer:** Yes, of course. Anything else?
+**Staff:** Yes, of course. Anything else?
 
 **You:** No, that's everything. Thank you for explaining.
 
@@ -194,23 +194,23 @@ last_verified: 2026-08
 
 目标：超额度被要求补税 + 保持镇定。
 
-**Officer:** How many cigarettes are you carrying?
+**Staff:** How many cigarettes are you carrying?
 
 **You:** About 300 — I bought them at the duty-free.
 
-**Officer:** That's over your allowance of 200. You'll need to pay duty on the excess.
+**Staff:** That's over your allowance of 200. You'll need to pay duty on the excess.
 
 **You:** I see. How much will that be?
 
-**Officer:** Let me calculate... it comes to £35.
+**Staff:** Let me calculate... it comes to £35.
 
 **You:** Okay, I'll pay it. Can I pay by card?
 
-**Officer:** Yes, at the desk over there.
+**Staff:** Yes, at the desk over there.
 
 **You:** Thank you. Is there anything else?
 
-**Officer:** No, once you've paid you're free to go.
+**Staff:** No, once you've paid you're free to go.
 
 **You:** Understood — I'll go pay now. Sorry for the trouble.
 

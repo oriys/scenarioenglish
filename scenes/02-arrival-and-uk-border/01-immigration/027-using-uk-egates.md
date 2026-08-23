@@ -153,19 +153,19 @@ last_verified: 2026-08
 
 **You:** Excuse me, can I use the eGates with this passport?
 
-**Officer:** Let me see. Yes, it has the biometric symbol, and you're over 18 — you can use them.
+**Staff:** Let me see. Yes, it has the biometric symbol, and you're over 18 — you can use them.
 
 **You:** Great. Which queue should I join?
 
-**Officer:** The ePassport gates queue, over there.
+**Staff:** The ePassport gates queue, over there.
 
 **You:** Thanks. (走到闸机前，放护照) 
 
-**Officer:** Place it face down, and look at the camera when it asks.
+**Staff:** Place it face down, and look at the camera when it asks.
 
 **You:** Got it. (机器显示 Please proceed) 
 
-**Officer:** That's it — welcome to the UK.
+**Staff:** That's it — welcome to the UK.
 
 **You:** Thank you very much.
 
@@ -175,19 +175,19 @@ last_verified: 2026-08
 
 **You:** Excuse me, the gate said "see a member of staff". What should I do now?
 
-**Officer:** No problem, it happens. Just follow the signs to the staffed desk.
+**Staff:** No problem, it happens. Just follow the signs to the staffed desk.
 
 **You:** Is it far? Do I queue again?
 
-**Officer:** No, go straight to the desk at the end — an officer will help you there.
+**Staff:** No, go straight to the desk at the end — an officer will help you there.
 
 **You:** Okay. Will it take long?
 
-**Officer:** Usually just a few minutes. They'll check your passport manually.
+**Staff:** Usually just a few minutes. They'll check your passport manually.
 
 **You:** Thank you. (到柜台) I'm sorry, the eGate didn't work for me.
 
-**Officer:** That's fine — let me just check your passport here.
+**Staff:** That's fine — let me just check your passport here.
 
 ## 13. Role Play C — Pressure Test
 
@@ -195,19 +195,19 @@ last_verified: 2026-08
 
 **You:** Excuse me, my son is 10. Can we use the eGates together?
 
-**Officer:** Yes, children between 8 and 17 must go through with an adult. You can use them together.
+**Staff:** Yes, children between 8 and 17 must go through with an adult. You can use them together.
 
 **You:** Do we go through one after the other?
 
-**Officer:** Yes, go first, then your son can follow — or walk through together if the gate allows.
+**Staff:** Yes, go first, then your son can follow — or walk through together if the gate allows.
 
 **You:** And do we need anything else?
 
-**Officer:** Just your passports. He's over 120cm, so he's fine for the gates.
+**Staff:** Just your passports. He's over 120cm, so he's fine for the gates.
 
 **You:** Perfect, thank you. (过关后) Which way to baggage reclaim?
 
-**Officer:** Follow the signs — straight ahead.
+**Staff:** Follow the signs — straight ahead.
 
 **You:** Thanks so much.
 

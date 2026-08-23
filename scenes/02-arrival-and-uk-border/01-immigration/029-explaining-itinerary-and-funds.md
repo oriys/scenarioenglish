@@ -146,19 +146,19 @@ last_verified: 2026-08
 
 目标：行程+住宿+资金一次说清。
 
-**Officer:** So, what's your itinerary?
+**Staff:** So, what's your itinerary?
 
 **You:** I'm flying into London, staying three days, then taking the train to Manchester.
 
-**Officer:** And where are you staying?
+**Staff:** And where are you staying?
 
 **You:** I've booked a hotel in the city centre — here's the booking.
 
-**Officer:** Thanks. How are you funding the trip?
+**Staff:** Thanks. How are you funding the trip?
 
 **You:** I have savings — about £1,500, and a credit card.
 
-**Officer:** That sounds fine. Enjoy your stay.
+**Staff:** That sounds fine. Enjoy your stay.
 
 **You:** Thank you very much.
 
@@ -166,19 +166,19 @@ last_verified: 2026-08
 
 目标：住亲友家被追问关系 + 资金被问细节。
 
-**Officer:** You said you're staying with family — who exactly?
+**Staff:** You said you're staying with family — who exactly?
 
 **You:** My aunt. She lives in Birmingham.
 
-**Officer:** Can you give me the address?
+**Staff:** Can you give me the address?
 
 **You:** Yes, one moment — it's on my phone. Here, this is it.
 
-**Officer:** I see. And how will you pay for things?
+**Staff:** I see. And how will you pay for things?
 
 **You:** My parents are supporting this trip — they've booked the flights.
 
-**Officer:** Alright. That's consistent. Welcome to the UK.
+**Staff:** Alright. That's consistent. Welcome to the UK.
 
 **You:** Thank you so much.
 
@@ -186,19 +186,19 @@ last_verified: 2026-08
 
 目标：计划模糊被追问，诚实应对不慌张。
 
-**Officer:** You don't seem to have a detailed plan. What exactly will you do in London?
+**Staff:** You don't seem to have a detailed plan. What exactly will you do in London?
 
 **You:** I have the main things booked — the hotel and a museum tour. I haven't planned every day yet; I'm taking it easy.
 
-**Officer:** Which museum?
+**Staff:** Which museum?
 
 **You:** The British Museum — I have the ticket on my phone.
 
-**Officer:** Let me see it. ... Okay, that checks out.
+**Staff:** Let me see it. ... Okay, that checks out.
 
 **You:** Thank you. Is there anything else you need?
 
-**Officer:** No, that's all. Enjoy your trip.
+**Staff:** No, that's all. Enjoy your trip.
 
 **You:** Thank you very much.
 

@@ -145,23 +145,23 @@ last_verified: 2026-08
 
 目标：能带的食品说清楚。
 
-**Officer:** Do you have any food with you?
+**Staff:** Do you have any food with you?
 
 **You:** Yes, I have some snacks — biscuits and chocolate.
 
-**Officer:** Any meat or dairy products?
+**Staff:** Any meat or dairy products?
 
 **You:** No, none. Just packaged snacks.
 
-**Officer:** Any fruit, vegetables or seeds?
+**Staff:** Any fruit, vegetables or seeds?
 
 **You:** No, I didn't bring any of those.
 
-**Officer:** That's fine. Anything to declare?
+**Staff:** That's fine. Anything to declare?
 
 **You:** No, I'm under my allowance.
 
-**Officer:** Okay, you can go. Enjoy your stay.
+**Staff:** Okay, you can go. Enjoy your stay.
 
 **You:** Thank you.
 
@@ -169,19 +169,19 @@ last_verified: 2026-08
 
 目标：带了腊肠被拦，诚实处理。
 
-**Officer:** Did you bring any food from home?
+**Staff:** Did you bring any food from home?
 
 **You:** Yes — some dried meat my mum made. Is that allowed?
 
-**Officer:** I'm afraid not. Meat products from outside the EU can't be brought in.
+**Staff:** I'm afraid not. Meat products from outside the EU can't be brought in.
 
 **You:** Oh, I'm so sorry. I didn't realise.
 
-**Officer:** No problem — we'll have to dispose of it.
+**Staff:** No problem — we'll have to dispose of it.
 
 **You:** Of course, I understand. Can I keep the biscuits too?
 
-**Officer:** Yes, biscuits are fine.
+**Staff:** Yes, biscuits are fine.
 
 **You:** Thank you for explaining. I'll know for next time.
 
@@ -189,23 +189,23 @@ last_verified: 2026-08
 
 目标：药品 + 规则都说不清，镇定求助。
 
-**Officer:** What's this medicine for?
+**Staff:** What's this medicine for?
 
 **You:** It's for my blood pressure. Here's my prescription.
 
-**Officer:** And this one? This is on the controlled list.
+**Staff:** And this one? This is on the controlled list.
 
 **You:** Sorry, I didn't know. It's my sleeping tablets. Do I need a letter?
 
-**Officer:** Yes, for controlled drugs you should carry a letter from your doctor.
+**Staff:** Yes, for controlled drugs you should carry a letter from your doctor.
 
 **You:** I have the prescription and the box with my name on it. Will that help?
 
-**Officer:** Let me check... yes, that's acceptable for the amount you have.
+**Staff:** Let me check... yes, that's acceptable for the amount you have.
 
 **You:** Thank you so much for checking.
 
-**Officer:** Keep them in your hand luggage next time.
+**Staff:** Keep them in your hand luggage next time.
 
 **You:** Noted — I will. Thank you.
 

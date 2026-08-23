@@ -147,15 +147,15 @@ last_verified: 2026-08
 
 目标：听懂要求、快速出示。
 
-**Officer:** May I see your hotel booking, please?
+**Staff:** May I see your hotel booking, please?
 
 **You:** Yes, here you are. It's on my phone.
 
-**Officer:** Thank you. And do you have a return ticket?
+**Staff:** Thank you. And do you have a return ticket?
 
 **You:** Yes, here it is — I fly back on the 18th.
 
-**Officer:** Great. That's everything. Welcome to the UK.
+**Staff:** Great. That's everything. Welcome to the UK.
 
 **You:** Thank you very much.
 
@@ -163,19 +163,19 @@ last_verified: 2026-08
 
 目标：听不懂 + 找材料慢，都能接住。
 
-**Officer:** Do you have proof of funds?
+**Staff:** Do you have proof of funds?
 
 **You:** Sorry, did you say proof of... something?
 
-**Officer:** Proof of funds — evidence that you can pay for your stay.
+**Staff:** Proof of funds — evidence that you can pay for your stay.
 
 **You:** Oh, I understand — my bank statement. One moment, let me find it.
 
-**Officer:** Take your time.
+**Staff:** Take your time.
 
 **You:** Here it is. Sorry for the wait.
 
-**Officer:** No problem. That's fine, thank you.
+**Staff:** No problem. That's fine, thank you.
 
 **You:** Thank you for your patience.
 
@@ -183,19 +183,19 @@ last_verified: 2026-08
 
 目标：材料缺失 + share code 问题，镇定应对。
 
-**Officer:** Can you show your share code, please?
+**Staff:** Can you show your share code, please?
 
 **You:** I'm sorry — I thought my status was shown on my passport. Could you help me understand?
 
-**Officer:** Your eVisa status needs a share code. Do you have the GOV.UK app?
+**Staff:** Your eVisa status needs a share code. Do you have the GOV.UK app?
 
 **You:** Yes, but my phone has no signal here. Can I use the airport Wi-Fi?
 
-**Officer:** Yes, there's free Wi-Fi — join it and open the app.
+**Staff:** Yes, there's free Wi-Fi — join it and open the app.
 
 **You:** Okay, give me a moment... Here's the code: W48392017.
 
-**Officer:** Thank you. That checks out. Welcome to the UK.
+**Staff:** Thank you. That checks out. Welcome to the UK.
 
 **You:** Thank you so much for helping me.
 

@@ -151,27 +151,27 @@ last_verified: 2026-08
 
 目标：顺利答完一轮标准问题。
 
-**Officer:** Good morning. Where have you travelled from?
+**Staff:** Good morning. Where have you travelled from?
 
 **You:** Good morning. I've come from Shanghai.
 
-**Officer:** What's the purpose of your visit?
+**Staff:** What's the purpose of your visit?
 
 **You:** I'm here on holiday.
 
-**Officer:** How long are you staying?
+**Staff:** How long are you staying?
 
 **You:** For two weeks — I fly back on the 18th.
 
-**Officer:** And where are you staying?
+**Staff:** And where are you staying?
 
 **You:** I'm staying at the Grand Hotel in London.
 
-**Officer:** Do you have a return ticket?
+**Staff:** Do you have a return ticket?
 
 **You:** Yes, here it is — it's on my phone.
 
-**Officer:** That's fine. Welcome to the UK.
+**Staff:** That's fine. Welcome to the UK.
 
 **You:** Thank you very much.
 
@@ -179,23 +179,23 @@ last_verified: 2026-08
 
 目标：没听懂 + 被要求证明，都能接住。
 
-**Officer:** What do you do for a living?
+**Staff:** What do you do for a living?
 
 **You:** Sorry, could you say that again?
 
-**Officer:** Sure — what's your job? What do you work as?
+**Staff:** Sure — what's your job? What do you work as?
 
 **You:** Oh, I see. I'm a teacher.
 
-**Officer:** And can you support yourself during the trip?
+**Staff:** And can you support yourself during the trip?
 
 **You:** Yes, I have savings. Do you need to see my bank statement?
 
-**Officer:** That won't be necessary. How long are you staying?
+**Staff:** That won't be necessary. How long are you staying?
 
 **You:** For ten days.
 
-**Officer:** Okay. Enjoy your visit.
+**Staff:** Okay. Enjoy your visit.
 
 **You:** Thank you.
 
@@ -203,19 +203,19 @@ last_verified: 2026-08
 
 目标：被追问细节 + 材料出示，保持镇定。
 
-**Officer:** You said you're staying with your cousin — what's the address?
+**Staff:** You said you're staying with your cousin — what's the address?
 
 **You:** It's in Birmingham, near the university. I have it written down — one moment.
 
-**Officer:** Take your time.
+**Staff:** Take your time.
 
 **You:** Here's the address, and this is our family photo from last year.
 
-**Officer:** I see. And how long have you planned the trip?
+**Staff:** I see. And how long have you planned the trip?
 
 **You:** About three months — I booked everything in advance.
 
-**Officer:** Alright. You're all set. Welcome to the UK.
+**Staff:** Alright. You're all set. Welcome to the UK.
 
 **You:** Thank you so much for your patience.
 
