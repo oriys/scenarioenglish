@@ -148,9 +148,7 @@ last_verified: 2026-08
 
 **Staff:** There's one just past the currency exchange desk.
 
-**You:** Thanks. (到 ATM) 
-
-**ATM:** Insert your card and enter your PIN.
+**You:** Thanks. (到 ATM，屏幕上显示: "Insert your card and enter your PIN") 
 
 **You:** (操作) It's asking which currency I want to pay in.
 
